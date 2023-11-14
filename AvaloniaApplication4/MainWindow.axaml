@@ -1,0 +1,55 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		xmlns:local="clr-namespace:AvaloniaApplication4"       
+	x:Class="AvaloniaApplication4.MainWindow"
+        Title="Mainwindow">
+	<Grid ShowGridLines="True">
+
+
+
+		<DataGrid Name="dataGrid1" Background="aqua" Items="{Binding GameScoreModel}" AutoGenerateColumns="false"> 
+			<DataGrid.Columns>
+
+				<!--
+				<local:DataGridForPreviousMatches></local:DataGridForPreviousMatches>-->
+				
+				<DataGridTextColumn FontSize="90"  Header="Team1Score"  Binding="{Binding Team1Score, Mode=OneWay}"  />
+				<DataGridTextColumn FontSize="90" Header="Team2Score" Binding="{Binding Team2Score, Mode=TwoWay}"  />
+				<DataGridTextColumn  Header="Duration" Binding="{Binding Duration}"/>
+				<DataGridTextColumn  Header="Gametype"  />
+			</DataGrid.Columns>
+		</DataGrid>
+
+		<DataGrid Name="dataGrid2" Items="{Binding previousMatches}" AutoGenerateColumns="false" Margin="0,200,0,0">
+			<DataGrid.Columns>
+
+				<!--
+				<local:DataGridForPreviousMatches></local:DataGridForPreviousMatches>-->
+
+				<DataGridTextColumn FontSize="15"  Header="Team3Score" Binding="{Binding Team1Score, Mode=OneWay}"  />
+				<DataGridTextColumn FontSize="15" Header="Team4Score" Binding="{Binding Team2Score,Mode=TwoWay}"  />
+				<DataGridTextColumn  Header="Duration" Binding="{Binding Duration}"  />
+				<DataGridTextColumn  Header="Gametype" />
+			</DataGrid.Columns>
+		</DataGrid>
+
+		<DataGrid Name="dataGrid3" Items="{Binding buttonDetected}" AutoGenerateColumns="false" Margin="400,240,0,0">
+			<DataGrid.Columns>
+
+				<!--
+				<local:DataGridForPreviousMatches></local:DataGridForPreviousMatches>-->
+
+				<DataGridTextColumn FontSize="15"  Header="buttonPressed" Binding="{Binding}"  />
+				
+			</DataGrid.Columns>
+		</DataGrid>
+		
+		
+		
+</Grid>
+
+</Window>
